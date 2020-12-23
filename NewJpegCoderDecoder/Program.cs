@@ -25,10 +25,10 @@ namespace NewJpegCoderDecoder
             byte[] buffer;
             FileStream fileStream;
 
-            if (args[3] == "1")
+            if (args[4] == "1")
             {
 
-                using (fileStream = File.OpenRead(args[0]))
+                using (fileStream = File.OpenRead(args[1]))
                 {
                     var fileSize = fileStream.Length;
                     buffer = new byte[fileSize];
@@ -57,11 +57,11 @@ namespace NewJpegCoderDecoder
 
                 lb.AddRange(vs.SelectMany(BitConverter.GetBytes).ToArray());
 
-                var listAfterArithmeticCoding = ArithmeticCoding(lb, Convert.ToInt32(args[2]));//10 самый лучшее сжатие
+                var listAfterArithmeticCoding = ArithmeticCoding(lb, Convert.ToInt32(args[3]));//10 самый лучшее сжатие
 
                 var afterHuffmanCoding = HuffmanCoding(listAfterArithmeticCoding);
 
-                using (FileStream fs = File.Create(args[1]))
+                using (FileStream fs = File.Create(args[2]))
                 {
                     fs.Write(afterHuffmanCoding.ToArray(), 0, afterHuffmanCoding.Count);
                 }
@@ -71,7 +71,7 @@ namespace NewJpegCoderDecoder
                 ///////////////////////////////////////////////////////////////////////////////////////////////////
                 ///////////////////////////////////////////////////////////////////////////////////////////////////
 
-                using (fileStream = File.OpenRead(args[1]))
+                using (fileStream = File.OpenRead(args[2]))
                 {
                     var fileSize = fileStream.Length;
                     buffer = new byte[fileSize];
