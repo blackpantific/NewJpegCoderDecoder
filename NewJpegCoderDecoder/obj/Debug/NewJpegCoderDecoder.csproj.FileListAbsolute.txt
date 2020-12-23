@@ -1,0 +1,2 @@
+G:\Xamarin\NewJpegCoderDecoder\NewJpegCoderDecoder\obj\Debug\NewJpegCoderDecoder.csproj.CoreCompileInputs.cache
+G:\Xamarin\NewJpegCoderDecoder\NewJpegCoderDecoder\obj\Debug\NewJpegCoderDecoder.csprojAssemblyReference.cache
