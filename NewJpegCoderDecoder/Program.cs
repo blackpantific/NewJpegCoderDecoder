@@ -162,7 +162,30 @@ namespace NewJpegCoderDecoder
             return InformationAboutText;
         }
 
+        public static List<byte> HuffmanDecoding(List<byte> OutputFileList)
+        {
+            FileStream fileStream;
+            List<byte> HuffmanWordsWithData;
+            List<byte> HuffmanDataInBitsList;
 
+
+            int alphabetSize = (int)OutputFileList[0];//размер алфавита
+            alphabetSize += 1;//потому что мы отнимаем 1 при передаче, для того чтобы если алфавит 256, то число уместилось в 1 байт
+            var userTextLenght = BitConverter.ToInt32(OutputFileList.GetRange(1, 4).ToArray(), 0);//количество букв в тексте
+
+            AlphabetLettersSortedByPropabilitiesHuffman = new List<byte>(OutputFileList.GetRange(5, alphabetSize));//получаем алфавит в упорядоченном виде(по убыв вероятностей)
+            L = new List<byte>(OutputFileList.GetRange((5 + alphabetSize), alphabetSize));//считываем длины код слов
+            var header = alphabetSize * 2 + 5;//размер заголовка
+
+            HuffmanWordsWithData = OutputFileList.GetRange(header, OutputFileList.Count - header);
+            HuffmanDataInBitsList = HuffmanWordsWithData.ByteListToBitList();
+
+            var textToDecode = GettingHuffmanWordsFromData(HuffmanDataInBitsList, alphabetSize, L);//кодовые слова вставляет в матрицу код слов, возвращает только текст для декодирования без алфавита в начале
+
+            var textToMoveToFront = GettingDataFromHuffmanWords(textToDecode, userTextLenght);
+
+            return textToMoveToFront;
+        }
 
         public static List<byte> ArithmeticDecoding(List<byte> OutputFileList)
         {

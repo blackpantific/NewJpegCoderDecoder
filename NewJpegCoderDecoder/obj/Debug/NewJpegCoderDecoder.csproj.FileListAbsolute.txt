@@ -1,2 +1,7 @@
 G:\Xamarin\NewJpegCoderDecoder\NewJpegCoderDecoder\obj\Debug\NewJpegCoderDecoder.csproj.CoreCompileInputs.cache
 G:\Xamarin\NewJpegCoderDecoder\NewJpegCoderDecoder\obj\Debug\NewJpegCoderDecoder.csprojAssemblyReference.cache
+G:\Xamarin\NewJpegCoderDecoder\NewJpegCoderDecoder\bin\Debug\NewJpegCoderDecoder.exe.config
+G:\Xamarin\NewJpegCoderDecoder\NewJpegCoderDecoder\bin\Debug\NewJpegCoderDecoder.exe
+G:\Xamarin\NewJpegCoderDecoder\NewJpegCoderDecoder\bin\Debug\NewJpegCoderDecoder.pdb
+G:\Xamarin\NewJpegCoderDecoder\NewJpegCoderDecoder\obj\Debug\NewJpegCoderDecoder.exe
+G:\Xamarin\NewJpegCoderDecoder\NewJpegCoderDecoder\obj\Debug\NewJpegCoderDecoder.pdb
